@@ -118,7 +118,8 @@ class GitDiffConditional:
         Returns:
             dict: Contains the steps for the pipeline
         """
-        pipeline = {"steps": []}
+        # TODO: include other top-level blocks, whatever those are
+        pipeline = {"steps": [], "env": dynamic_pipeline["env"]}
 
         for step in dynamic_pipeline["steps"]:
             if isinstance(step, dict) and "wait" not in step.keys():
