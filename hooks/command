@@ -49,5 +49,5 @@ docker run --rm -v "$PWD:/buildkite" --env-file <(env | grep BUILDKITE) buildkit
 
 if [[ -s ".git_diff_conditional/pipeline_output" ]]; then
   echo "Uploading the pipeline to the buildkite-agent"
-  buildkite-agent pipeline upload .git_diff_conditional/pipeline_output
+  buildkite-agent pipeline upload --replace .git_diff_conditional/pipeline_output
 fi
